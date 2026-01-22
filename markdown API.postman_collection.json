@@ -1,0 +1,183 @@
+{
+  "info": {
+    "_postman_id": "a53fe28b-5029-4cf6-9d28-410d0be5d967",
+    "name": "markdown API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44858396"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "health"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Upload Markdown File",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "",
+              "type": "file",
+              "uuid": "b5338aa4-4231-4ab6-8a31-087155a2b30d",
+              "src": "postman-cloud:///1f0f7922-c34d-4070-a427-5b552ce9ba70"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/notes/example.md/render",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "notes",
+            "example.md",
+            "render"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "save / edit notes",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"filename\": \"example.md\",\r\n  \"content\": \"# is it will overwrite?.\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/notes/save",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "notes",
+            "save"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Check Grammar",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"content\": \"She go to school yesterday and dont like it.\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/notes/grammar",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "notes",
+            "grammar"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Render Markdown as HTML",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notes/example.md/render",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "notes",
+            "example.md",
+            "render"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all notes",
+      "request": {
+        "auth": {
+          "type": "noauth"
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/notes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "notes"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
